@@ -125,9 +125,9 @@ class ApiController
 
     public function write() : void
     {
-        if(isset($this->memory[$this->registers["cursor"]]))
+        if(isset($this->memory[intval($this->registers["cursor"])]))
         {
-            $this->memory[$this->registers["cursor"]] = $this->registers["storage"];
+            $this->memory[intval($this->registers["cursor"])] = $this->registers["storage"];
 
             $_SESSION["registers"] = $this->registers;
             $_SESSION["memory"] = $this->memory;
