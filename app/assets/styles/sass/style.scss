@@ -1,0 +1,16 @@
+/* LIBRARIES */
+@import "libs/reset";
+
+/* VARIABLES */
+@import "vars/colors";
+@import "vars/fonts";
+
+/* LAYOUTS */
+@import "layout/general";
+
+html {
+  font-size:16px;
+  @include source;
+  background-color: $black;
+  color:$white;
+}

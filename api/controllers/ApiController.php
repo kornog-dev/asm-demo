@@ -71,6 +71,7 @@ class ApiController
         $this->registers[$register] += intval($value);
 
         $_SESSION["registers"] = $this->registers;
+        $_SESSION["memory"] = $this->memory;
 
         $this->getAllInfos();
     }
@@ -79,6 +80,9 @@ class ApiController
     {
         $this->registers[$register] -= intval($value);
 
+        $_SESSION["registers"] = $this->registers;
+        $_SESSION["memory"] = $this->memory;
+
         $this->getAllInfos();
     }
 
@@ -86,12 +90,18 @@ class ApiController
     {
         $this->registers["storage"] = $this->registers[$register];
 
+        $_SESSION["registers"] = $this->registers;
+        $_SESSION["memory"] = $this->memory;
+
         $this->getAllInfos();
     }
 
     public function set(string $register) : void
     {
          $this->registers[$register] = $this->registers["storage"];
+
+         $_SESSION["registers"] = $this->registers;
+         $_SESSION["memory"] = $this->memory;
 
         $this->getAllInfos();
     }
@@ -101,6 +111,9 @@ class ApiController
         if(isset($this->memory[$this->registers["cursor"]]))
         {
             $this->registers["storage"] = $this->memory[$this->registers["cursor"]];
+
+            $_SESSION["registers"] = $this->registers;
+            $_SESSION["memory"] = $this->memory;
 
             $this->getAllInfos();
         }
@@ -116,6 +129,9 @@ class ApiController
         {
             $this->memory[$this->registers["cursor"]] = $this->registers["storage"];
 
+            $_SESSION["registers"] = $this->registers;
+            $_SESSION["memory"] = $this->memory;
+
             $this->getAllInfos();
         }
         else
@@ -128,6 +144,9 @@ class ApiController
     {
         $this->registers["cursor"] = intval($instructionNumber);
 
+        $_SESSION["registers"] = $this->registers;
+        $_SESSION["memory"] = $this->memory;
+
         $this->getAllInfos();
     }
 
@@ -137,6 +156,9 @@ class ApiController
         {
             $this->registers["cursor"] = intval($instructionNumber);
         }
+
+        $_SESSION["registers"] = $this->registers;
+        $_SESSION["memory"] = $this->memory;
 
         $this->getAllInfos();
     }

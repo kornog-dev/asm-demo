@@ -1,0 +1,8 @@
+@mixin source($weight : 400, $style : normal) {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+  font-variation-settings:
+          "wdth" 100;
+}

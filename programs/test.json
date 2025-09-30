@@ -1,0 +1,48 @@
+{
+  "program_name": "Programme de test des instructions",
+  "instructions": [
+    {
+      "name": "add",
+      "register": "condition",
+      "value": 5
+    },
+    {
+      "name": "add",
+      "register": "storage",
+      "value": 9
+    },
+    {
+      "name": "sub",
+      "register": "condition",
+      "value": 4
+    },
+    {
+      "name": "get",
+      "register": "condition"
+    },
+    {
+      "name": "set",
+      "register": "cursor"
+    },
+    {
+      "name": "write"
+    },
+    {
+      "name": "add",
+      "register": "storage",
+      "value": 7
+    },
+    {
+      "name": "read"
+    },
+    {
+      "name": "jump",
+      "instruction_number": 0
+    },
+    {
+      "name": "zjump",
+      "value": 4,
+      "instruction_number": 4
+    }
+  ]
+}
