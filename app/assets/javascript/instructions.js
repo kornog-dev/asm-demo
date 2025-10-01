@@ -9,7 +9,8 @@ export function add(register, value) {
     let params = new URLSearchParams({
         route : 'add',
         register : register,
-        value : value
+        value : value,
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -29,7 +30,8 @@ export function sub(register, value) {
     let params = new URLSearchParams({
         route : 'sub',
         register : register,
-        value : value
+        value : value,
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -49,6 +51,7 @@ export function get(register) {
     let params = new URLSearchParams({
         route : 'get',
         register : register,
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -68,6 +71,7 @@ export function set(register) {
     let params = new URLSearchParams({
         route : 'set',
         register : register,
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -86,6 +90,7 @@ export function read() {
 
     let params = new URLSearchParams({
         route : 'read',
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -104,6 +109,7 @@ export function write() {
 
     let params = new URLSearchParams({
         route : 'write',
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -124,6 +130,7 @@ export function jump(instructionNumber) {
     let params = new URLSearchParams({
         route : 'jump',
         instruction_number : instructionNumber,
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
@@ -145,6 +152,7 @@ export function zjump(value, instructionNumber) {
         route : 'jump',
         instruction_number : instructionNumber,
         value : value,
+        PHPSESSID : localStorage.getItem("token")
     });
     fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
