@@ -2,7 +2,7 @@
 
 require "config/autoload.php";
 
-if(isset($_GET["PHPSESSID"])
+if(isset($_GET["PHPSESSID"]))
 {
     session_id($_GET["PHPSESSID"]);
     session_start();
