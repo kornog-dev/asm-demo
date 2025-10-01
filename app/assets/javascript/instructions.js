@@ -12,7 +12,7 @@ export function add(register, value) {
         value : value,
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);
@@ -33,7 +33,7 @@ export function sub(register, value) {
         value : value,
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);
@@ -53,7 +53,7 @@ export function get(register) {
         register : register,
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);
@@ -73,7 +73,7 @@ export function set(register) {
         register : register,
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);
@@ -92,7 +92,7 @@ export function read() {
         route : 'read',
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);
@@ -111,7 +111,7 @@ export function write() {
         route : 'write',
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 console.log(data);
@@ -132,7 +132,7 @@ export function jump(instructionNumber) {
         instruction_number : instructionNumber,
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);
@@ -154,7 +154,7 @@ export function zjump(value, instructionNumber) {
         value : value,
         PHPSESSID : localStorage.getItem("token")
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 updateRegisters(data.registers);

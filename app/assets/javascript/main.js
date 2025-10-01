@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function(){
     let params = new URLSearchParams({
         route : 'token'
     });
-    fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+    fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
         (response) => {
             response.json().then((data) => {
                 localStorage.setItem("token", data.token);
@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function(){
             route : 'reset',
             PHPSESSID : localStorage.getItem("token")
         });
-        fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+        fetch("https://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
             (response) => {
                 response.json().then((data) => {
 
