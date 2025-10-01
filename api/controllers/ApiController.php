@@ -24,6 +24,13 @@ class ApiController
         }
     }
 
+    public function reset() : void
+    {
+        $this->memory = $this->initMemory();
+        $this->registers = $this->initRegisters();
+        $this->getAllInfos();
+    }
+
     private function initMemory() : array
     {
         $memory = [];

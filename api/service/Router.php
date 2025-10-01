@@ -18,6 +18,10 @@ class Router {
         {
              $controller->getAllInfos();
         }
+        else if($_GET['route'] === 'reset')
+        {
+             $controller->reset();
+        }
         else if($_GET['route'] === 'sub')
         {
             $controller->sub($_GET['register'], $_GET['value']);

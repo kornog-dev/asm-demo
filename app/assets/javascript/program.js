@@ -56,7 +56,7 @@ export function runProgram()
 export function loadProgram(event) {
     event.preventDefault();
 
-    localStorage.setItem("asm-program", JSON.stringify(program));
+    localStorage.setItem("asm-program", JSON.stringify({}));
     localStorage.setItem("asm-cursor", 0);
 
     let files = document.getElementById('selectFile').files;

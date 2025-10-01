@@ -16,6 +16,7 @@ export function updateMemory(newMemory)
     for(let i = 0; i < 100; i++)
     {
         let box = memory[i];
+        box.innerHTML = "";
 
         if(newMemory[i].value !== 0)
         {
