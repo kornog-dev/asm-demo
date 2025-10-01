@@ -61,6 +61,7 @@ class ApiController
             "code" => 200,
             "memory" => $this->memory,
             "registers" => $this->registers,
+            "token" => session_id()
         ];
 
         echo json_encode($data);

@@ -1,0 +1,15 @@
+{
+  "program_name": "Programme de test du write",
+  "instructions": [
+    {
+      "name": "add",
+      "register": "cursor",
+      "value": 1
+    },
+    {
+      "name": "add",
+      "register": "storage",
+      "value": 8
+    }
+  ]
+}

@@ -10,9 +10,14 @@ export function updateCursor()
         cursorDiv.classList.toggle("active");
         let li = cursorDiv.parentElement;
         let nextLi = li.nextSibling;
-        let nextDiv = nextLi.childNodes[0];
-        nextDiv.classList.toggle("active");
-        nextDiv.innerHTML = "=>";
+
+        if(nextLi)
+        {
+            let nextDiv = nextLi.childNodes[0];
+            nextDiv.classList.toggle("active");
+            nextDiv.innerHTML = "=>";
+        }
+
         localStorage.setItem("asm-cursor", Number(cursor) + 1);
     }
 }
