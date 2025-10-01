@@ -57,7 +57,7 @@ body {
       section {
         padding : 1.5rem;
 
-        & > button {
+        & > button:first-of-type {
           background-color: transparent;
           color: $pink;
           border : 1px solid $pink;
@@ -69,6 +69,23 @@ body {
             background-color: $pink;
             color: $black;
             border : 1px solid $pink;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+          }
+        }
+
+        & > button {
+          background-color: transparent;
+          color: $blue;
+          border : 1px solid $blue;
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+          margin-bottom: 1.5rem;
+
+          &:hover {
+            background-color: $blue;
+            color: $black;
+            border : 1px solid $blue;
             font-size: 1.2rem;
             padding: 0.5rem 1rem;
           }

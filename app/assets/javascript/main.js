@@ -20,4 +20,19 @@ window.addEventListener("DOMContentLoaded", function(){
 
     let runBtn = document.getElementById("run-program");
     runBtn.addEventListener("click", runProgram);
+
+    let resetBtn = document.getElementById("reset");
+    resetBtn.addEventListener("click", () => {
+        let params = new URLSearchParams({
+            route : 'reset',
+            PHPSESSID : localStorage.getItem("token")
+        });
+        fetch("http://asm-demo.kornog-formations.com/api/index.php?" + params.toString()).then(
+            (response) => {
+                response.json().then((data) => {
+
+                })
+            }
+        );
+    });
 })
