@@ -14,6 +14,10 @@ class Router {
         {
             $controller->add($_GET['register'], $_GET['value']);
         }
+        else if($_GET['route'] === 'token')
+        {
+             $controller->getAllInfos();
+        }
         else if($_GET['route'] === 'sub')
         {
             $controller->sub($_GET['register'], $_GET['value']);
