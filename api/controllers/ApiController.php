@@ -170,6 +170,10 @@ class ApiController
         {
             $this->registers["program"] = intval($instructionNumber);
         }
+        else
+        {
+            $this->registers["program"]++;
+        }
 
         $_SESSION["registers"] = $this->registers;
         $_SESSION["memory"] = $this->memory;

@@ -2,7 +2,7 @@ export function updateRegisters(registers) {
     let storage = document.querySelector("#reg-storage p");
     let condition = document.querySelector("#reg-condition p");
     let cursor = document.querySelector("#reg-cursor p");
-    let program = document.querySelector("#program p");
+    let program = document.querySelector("#reg-program p");
 
     if(registers.storage !== null)
     {
