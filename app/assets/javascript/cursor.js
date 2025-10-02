@@ -1,25 +1,22 @@
 export function updateCursor()
 {
-    let cursor = localStorage.getItem("asm-cursor");
+    let cursorDiv = document.querySelector("#program ul li > div:first-of-type.active");
+    cursorDiv.innerHTML = "";
+    cursorDiv.classList.toggle("active");
+
+    let programDiv = document.querySelector("#reg-program p");
+    let programCount = Number(programDiv.innerHTML);
+
     let program = JSON.parse(localStorage.getItem("asm-program"));
+    let instructions = program.instructions;
 
-    if(cursor < program.instructions.length)
+    if(programCount < instructions.length)
     {
-        let cursorDiv = document.querySelector("#program ul li > div:first-of-type.active");
-        cursorDiv.innerHTML = "";
-        cursorDiv.classList.toggle("active");
-        let li = cursorDiv.parentElement;
-        let nextLi = li.nextSibling;
-
-        if(nextLi)
-        {
-            let nextDiv = nextLi.childNodes[0];
-            nextDiv.classList.toggle("active");
-            nextDiv.innerHTML = "=>";
-        }
-
-        let programDiv = document.querySelector("#reg-program p");
-
-        localStorage.setItem("asm-cursor", Number(programDiv.innerHTML));
+        let lis = document.querySelectorAll("#program ul li");
+        let div = lis[programCount].querySelector("div:first-of-type");
+        div.classList.toggle("active");
+        div.innerHTML = "=>";
     }
+
+    localStorage.setItem("asm-cursor", Number(programDiv.innerHTML));
 }

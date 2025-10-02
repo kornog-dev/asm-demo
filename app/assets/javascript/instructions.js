@@ -152,7 +152,7 @@ export function zjump(value, instructionNumber) {
     console.log(`zjump ${value} ${instructionNumber}`);
 
     let params = new URLSearchParams({
-        route : 'jump',
+        route : 'zjump',
         instruction_number : instructionNumber,
         value : value,
         PHPSESSID : localStorage.getItem("token")

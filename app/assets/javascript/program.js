@@ -8,49 +8,54 @@ function readInstruction()
     let instructions = program.instructions;
     let i = Number(localStorage.getItem("asm-cursor"));
 
+    console.log(`Nombre d'instructions ${instructions.length} - Instruction en cours ${i}`);
+
     if(i === instructions.length)
     {
+        console.log("Fin du programme");
         clearInterval(interValId);
         interValId = null;
     }
-
-    if(instructions[i].name === "add")
+    else
     {
-        add(instructions[i].register, instructions[i].value);
-    }
-    else if(instructions[i].name === "sub")
-    {
-        sub(instructions[i].register, instructions[i].value);
-    }
-    else if(instructions[i].name === "get")
-    {
-        get(instructions[i].register)
-    }
-    else if(instructions[i].name === "set")
-    {
-        set(instructions[i].register);
-    }
-    else if(instructions[i].name === "read")
-    {
-        read();
-    }
-    else if(instructions[i].name === "write")
-    {
-        write();
-    }
-    else if(instructions[i].name === "jump")
-    {
-        jump(instructions[i].instruction_number);
-    }
-    else if(instructions[i].name === "write")
-    {
-        zjump(instructions[i].value, instructions[i].instruction_number)
+        if(instructions[i].name === "add")
+        {
+            add(instructions[i].register, instructions[i].value);
+        }
+        else if(instructions[i].name === "sub")
+        {
+            sub(instructions[i].register, instructions[i].value);
+        }
+        else if(instructions[i].name === "get")
+        {
+            get(instructions[i].register)
+        }
+        else if(instructions[i].name === "set")
+        {
+            set(instructions[i].register);
+        }
+        else if(instructions[i].name === "read")
+        {
+            read();
+        }
+        else if(instructions[i].name === "write")
+        {
+            write();
+        }
+        else if(instructions[i].name === "jump")
+        {
+            jump(instructions[i].instruction_number);
+        }
+        else if(instructions[i].name === "zjump")
+        {
+            zjump(instructions[i].value, instructions[i].instruction_number)
+        }
     }
 }
 
 export function runProgram()
 {
-    interValId = setInterval(readInstruction, 500);
+    interValId = setInterval(readInstruction, 1000);
 }
 
 export function loadProgram(event) {
