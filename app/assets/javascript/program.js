@@ -112,7 +112,7 @@ export function loadProgram(event) {
             {
                 divInstruction.innerHTML = `${program.instructions[i].name} ${program.instructions[i].register}`;
             }
-            else if(program.instructions[i].name === "read" || program.instructions[i].name === "write")
+            else if(program.instructions[i].name === "read" || program.instructions[i].name === "write" || program.instructions[i].name === "exit")
             {
                 divInstruction.innerHTML = `${program.instructions[i].name}`;
             }

@@ -1,0 +1,26 @@
+{
+  "program_name": "Lire dans la mémoire",
+  "instructions": [
+    {
+      "name": "add",
+      "register": "cursor",
+      "value": 5
+    },
+    {
+      "name": "add",
+      "register": "storage",
+      "value": 8
+    },
+    {
+      "name": "write"
+    },
+    {
+      "name": "sub",
+      "register": "storage",
+      "value": 8
+    },
+    {
+      "name": "read"
+    }
+  ]
+}
