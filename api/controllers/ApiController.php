@@ -77,6 +77,7 @@ class ApiController
     public function add(string $register, string $value) : void
     {
         $this->registers[$register] += intval($value);
+        $this->registers["program"]++;
 
         $_SESSION["registers"] = $this->registers;
         $_SESSION["memory"] = $this->memory;
@@ -87,6 +88,7 @@ class ApiController
     public function sub(string $register, string $value) : void
     {
         $this->registers[$register] -= intval($value);
+        $this->registers["program"]++;
 
         $_SESSION["registers"] = $this->registers;
         $_SESSION["memory"] = $this->memory;
@@ -97,6 +99,7 @@ class ApiController
     public function get(string $register) : void
     {
         $this->registers["storage"] = $this->registers[$register];
+        $this->registers["program"]++;
 
         $_SESSION["registers"] = $this->registers;
         $_SESSION["memory"] = $this->memory;
@@ -107,6 +110,7 @@ class ApiController
     public function set(string $register) : void
     {
          $this->registers[$register] = $this->registers["storage"];
+         $this->registers["program"]++;
 
          $_SESSION["registers"] = $this->registers;
          $_SESSION["memory"] = $this->memory;
@@ -119,6 +123,7 @@ class ApiController
         if(isset($this->memory[$this->registers["cursor"]]))
         {
             $this->registers["storage"] = $this->memory[$this->registers["cursor"]]["value"];
+            $this->registers["program"]++;
 
             $_SESSION["registers"] = $this->registers;
             $_SESSION["memory"] = $this->memory;
@@ -136,6 +141,7 @@ class ApiController
         if(isset($this->memory[intval($this->registers["cursor"])]))
         {
             $this->memory[intval($this->registers["cursor"])]["value"] = $this->registers["storage"];
+            $this->registers["program"]++;
 
             $_SESSION["registers"] = $this->registers;
             $_SESSION["memory"] = $this->memory;
@@ -150,7 +156,7 @@ class ApiController
 
     public function jump(string $instructionNumber) : void
     {
-        $this->registers["cursor"] = intval($instructionNumber);
+        $this->registers["program"] = intval($instructionNumber);
 
         $_SESSION["registers"] = $this->registers;
         $_SESSION["memory"] = $this->memory;
@@ -162,7 +168,7 @@ class ApiController
     {
         if($this->registers["condition"] === intval($value))
         {
-            $this->registers["cursor"] = intval($instructionNumber);
+            $this->registers["program"] = intval($instructionNumber);
         }
 
         $_SESSION["registers"] = $this->registers;

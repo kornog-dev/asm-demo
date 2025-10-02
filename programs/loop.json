@@ -1,0 +1,40 @@
+{
+  "program_name": "Faire une boucle",
+  "instructions": [
+    {
+      "name": "add",
+      "register": "cursor",
+      "value": 0
+    },
+    {
+      "name": "add",
+      "register": "storage",
+      "value": 0
+    },
+    {
+      "name": "add",
+      "register": "condition",
+      "value": 1
+    },
+    {
+      "name": "write"
+    },
+    {
+      "name": "add",
+      "register": "cursor",
+      "value": 1
+    },
+    {
+      "name": "zjump",
+      "instruction_number": 7,
+      "value": 3
+    },
+    {
+      "name": "jump",
+      "instruction_number": 1
+    },
+    {
+      "name": "read"
+    }
+  ]
+}
