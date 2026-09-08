@@ -4,7 +4,7 @@ import {updateCursor} from "./cursor.js";
 
 // let baseURL = "https://asm-demo.kornog-formations.com/api/index.php?";
 //let baseURL = "http://asm-demo.kornog-formations.com/api/index.php?";
-let baseURL = "https://asm-demo.formations.kornog.bzh/api/index.php?";
+let baseURL = "https://api.asm-demo.formations.kornog.bzh/index.php?";
 
 export function add(register, value) {
 
